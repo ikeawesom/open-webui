@@ -114,6 +114,21 @@ You have successfully set up **Open WebUI** on your own system! You can now play
 *NOTE: You may revisit Step 3 to download more Ollama models.*
 
 
+## Important Reminders
+
+- Keep your **Windows Subsystem for Linux** up-to-date by running `wsl --update` before every launch of Docker Desktop.
+- Open WebUI can only run on **Python 3.11**, so ensure Step 2 is done properly.
+- ONLY install LLMs that are **compatible with your own PC's RAM** or your system may crash and Open WebUI may not work as expected.
+- Ensure that BOTH Docker Desktop and Ollama are **running in the background** before executing Step 4.
+- Containers created (in Step 4) only need to be done **once**, do NOT run the same command as you will run into errors.
+
+## Next steps
+
+To close the Open WebUI local server, press `CTRL+C` or `CMD+C` in the CLI that you executed `open-webui serve`.
+
+As the docker container has already been created, for future Open WebUI launches, simply execute `open-webui serve` on your CLI as the other steps have already been set up.
+
+
 ## Conclusion
 
 This repo is a long an extensive guide to teach you how to completely set up Open WebUI on your system. If you have any questions, feel free to create an issue and I will get back to you as soon as possible.
