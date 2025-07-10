@@ -1,4 +1,4 @@
-# Open-Webui with Python
+# Open WebUI with Python
 
 Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.
 
@@ -9,6 +9,7 @@ This extensive guide will teach you how to install and run it on your **own PC s
 - Python
 - Ollama
 - Any suitable LLM for your PC
+- At least 8GB of RAM and 20GB of Storage
 
 ## Getting started
 
