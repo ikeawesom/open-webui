@@ -1,93 +1,113 @@
-# open-webui
+# Open-Webui with Python
 
+Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.
 
+This extensive guide will teach you how to install and run it on your **own PC step by step!**
+
+## Software requirements
+- Docker
+- Python
+- Ollama
+- Any suitable LLM for your PC
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### 1. Docker Desktop
+Docker is a tool that helps applications using containers. This is important to run Open WebUI.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.gspl.sg/ike.lim/open-webui.git
-git branch -M main
-git push -uf origin main
+First, run the following command on your CLI.
+```bash
+wsl --update
 ```
 
-## Integrate with your tools
+This ensures the **Windows Subsystem for Linux** is up-to-date as it is required for Docker Desktop to run correctly.
 
-- [ ] [Set up project integrations](https://gitlab.gspl.sg/ike.lim/open-webui/-/settings/integrations)
+Download the latest version of **Docker Desktop** [here](https://www.docker.com/products/docker-desktop/).
 
-## Collaborate with your team
+Once you have Docker Desktop installed, you will be prompted to **Sign Up/Sign In**. You may choose to do so, or simply press **Skip**.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+<hr/>
 
-## Test and Deploy
+### 2. Python
 
-Use the built-in continuous integration in GitLab.
+Download the **latest version** of Python if you have not already [here](https://www.python.org/downloads/).
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+To check your current version, simply use this command:
+```bash
+py --version
+```
 
-***
+This next step is **CRUCIAL** as Open WebUI only runs on **Python 3.11**.
 
-# Editing this README
+```bash
+winget install python.python.3.11
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+This installs Python 3.11 on your system, but as a **SECONDARY*** Python version. 
 
-## Suggestions for a good README
+**Your default version will still be the one previously installed.*
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
+<hr/>
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### 3. Ollama
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Ollama is a locally deployed AI model runner, designed to allow you to download and execute large language models (LLMs) directly on your PC.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Download the latest version [here](https://ollama.com/download).
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+After installing, launch Ollama. Note that will **NOT appear as a UI**, but simply a **background process**.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Run the following to check that ollama has been successfully installed on your system.
+```bash
+ollama --version
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Next, find your Ollama LLMS [here](https://ollama.com/search). Ensure to get an LLM that is **BEST SUITED** for your own PC's **RAM Capacity**.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Let's use `deepseek-r1` with `8b` parameters for example.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```bash
+ollama pull deepseek-r1 # to get the latest version of the LLM
+```
+Then run the following to get the `8b` model.
+```bash
+ollama run deepseek-r1:8b
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+*NOTE: Feel free to download as many models as you want as this can be used within Open WebUI!*
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+<hr/>
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### 4. Open WebUI
 
-## License
-For open source projects, say how it is licensed.
+Finally, after all the requirements, we can set up Open WebUI onto our system.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+To install using **Python 3.11**, run the following command using `py -3.11 -m`. This might take awhile.
+```bash
+py -3.11 -m pip install open-webui
+```
+
+After installation, you can start Open WebUI by executing:
+```bash
+open-webui serve
+```
+
+Ensure that Docker Desktop is already running in the background. Then open up a new CLI and run the following:
+```bash
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
+
+Once the command has been executed, simply visit `http://localhost:3000` and VOILA!
+
+You have successfully set up **Open WebUI** on your own system! You can now play around with the different models you have on your system.
+
+*NOTE: You may revisit Step 3 to download more Ollama models.*
+
+
+## Conclusion
+
+This repo is a long an extensive guide to teach you how to completely set up Open WebUI on your system. If you have any questions, feel free to create an issue and I will get back to you as soon as possible.
+
+Thank you!
+
