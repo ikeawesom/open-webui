@@ -24,7 +24,13 @@ This ensures the **Windows Subsystem for Linux** is up-to-date as it is required
 
 Download the latest version of **Docker Desktop** [here](https://www.docker.com/products/docker-desktop/).
 
-Once you have Docker Desktop installed, you will be prompted to **Sign Up/Sign In**. You may choose to do so, or simply press **Skip**.
+Once you have Docker Desktop installed, you will be prompted to **Sign Up/Sign In**. You may choose to do so, or simply press **Skip** as shown below.
+
+![Docker UMS Screen](./media/docker/docker-ums.jpg)
+
+Once done, you may be prompted with some software updates and that is okay. Just follow the steps on-screen for Docker Desktop. Once Docker Desktop's updates and Windows Subsystem for Linux has been installed, you will see the following Docker Dashboard.
+
+![Docker Dashboard](./media/docker/docker-dashboard.jpg)
 
 <hr/>
 
@@ -99,6 +105,8 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 ```
 
 Once the command has been executed, simply visit `http://localhost:3000` and VOILA!
+
+![Open WebUI locally](./media/final.png)
 
 You have successfully set up **Open WebUI** on your own system! You can now play around with the different models you have on your system.
 
