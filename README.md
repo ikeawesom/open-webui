@@ -32,6 +32,7 @@ Once done, you may be prompted with some software updates and that is okay. Just
 
 ![Docker Dashboard](./media/docker/docker-dashboard.jpg)
 
+*NOTE: You may close this window but **DO NOT** end the **background process***
 <hr/>
 
 ### 2. Python
@@ -81,7 +82,7 @@ Then run the following to get the `8b` model.
 ollama run deepseek-r1:8b
 ```
 
-*NOTE: Feel free to download as many models as you want as this can be used within Open WebUI!*
+*NOTE: This will take awhile depending on your internet and PC speed. Feel free to download as many models as you want as this can be used within Open WebUI!*
 
 <hr/>
 
@@ -99,12 +100,12 @@ After installation, you can start Open WebUI by executing:
 open-webui serve
 ```
 
-Ensure that Docker Desktop is already running in the background. Then open up a new CLI and run the following:
+Ensure that Docker Desktop is already running in the background. Then **open up a new CLI** and run the following:
 ```bash
 docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
-Once the command has been executed, simply visit `http://localhost:3000` and VOILA!
+After installation, you can access Open WebUI at http://localhost:3000.
 
 ![Open WebUI locally](./media/final.png)
 
