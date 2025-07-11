@@ -16,12 +16,19 @@ This extensive guide will teach you how to install and run it on your **own PC s
 ### 1. Docker Desktop
 Docker is a tool that helps applications using containers. This is important to run Open WebUI.
 
-First, run the following command on your CLI.
+This first step is only for **Windows OS**. Run the following command on your CLI. The `wsl` package is essenential for Docker to run but it is not built into Windows OS, unlike **Mac/Linux**.
+```bash
+wsl --install
+```
+
+After installation, run the following command to ensure you have the latest version.
 ```bash
 wsl --update
 ```
 
-This ensures the **Windows Subsystem for Linux** is up-to-date as it is required for Docker Desktop to run correctly.
+This ensures the **Windows Subsystem for Linux (WSL)** is up-to-date as it is required for Docker Desktop to run correctly.
+
+*NOTE: The following steps are now applicable for all OS*.
 
 Download the latest version of **Docker Desktop** [here](https://www.docker.com/products/docker-desktop/).
 
